@@ -1,4 +1,4 @@
-# MongoDB + Mongo Express + PHP 7.4
+# MongoDB + Mongo Express + PHP 7.4 + PHPUnit
 This repository contains ready to use `docker-compose.yml` which contains following services:
 1. MongoDB server
 2. Mongo Express - light http admin (like PHPMyAdmin for MySQL)
