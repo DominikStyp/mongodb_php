@@ -17,3 +17,10 @@ This repository contains ready to use `docker-compose.yml` which contains follow
    *8081* is the port you are interested in.
 3. Go to your browser and paste **Docker Machine IP + Mongo Express** port like in following example: <br />
    http://192.168.99.100:8081 - and you should see Mongo Express welcome page.
+   
+# Running PHPUnit tests
+You can use **PHP 7.4** with **PHPUnit** to quikcly run the tests from **./tests** directory (which should appear when you run **php74** service along with others). <br />
+Tu run the tests:
+1. Go to directory with: `docker-compose.yml` file
+2. Run command: `docker-compose run php74` <br />
+If no tests are executed this means you don't have any PHPUnit tests there.
