@@ -10,10 +10,10 @@ This repository contains ready to use `docker-compose.yml` which contains follow
 3. Run command: `docker-compose up --build -d`
 
 # How to use Mongo Express
-1. Check your Docker Machine IP: `docker-machine ls`<br /> 
+1. Check your **Docker Machine** IP: `docker-machine ls`<br /> 
    It should be under URL column, for example: *tcp://192.168.99.100:2376*
-2. Check if your MongoDB and Mongo Express are running: `docker ps` and see if it's running <br />
-   You should see mongo-express there and in PORTS column value like: *0.0.0.0:8081->8081/tcp* <br />
-   8081 is the port you are interested in.
-3. Go to your browser and paste Docker Machine IP + Mongo Express port like in following example: <br />
+2. Check if your **MongoDB** and **Mongo Express** are running command: `docker ps` <br />
+   You should see mongo-express there, and under PORTS column value like: *0.0.0.0:8081->8081/tcp* <br />
+   *8081* is the port you are interested in.
+3. Go to your browser and paste **Docker Machine IP + Mongo Express** port like in following example: <br />
    http://192.168.99.100:8081 - and you should see Mongo Express welcome page.
