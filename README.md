@@ -24,3 +24,8 @@ Tu run the tests:
 1. Go to directory with: `docker-compose.yml` file
 2. Run command: `docker-compose run php74` <br />
 If no tests are executed this means you don't have any PHPUnit tests there.
+
+# Other Features
+1. Copying **vendor** files from container to shared directory: `docker-compose run php74 -c` <br />
+   This may be useful when you want to have plugins installed by **composer** in your project, <br />
+   and use them for autocompletion in PHPStorm and other IDE's
