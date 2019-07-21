@@ -6,6 +6,8 @@ services:
       context: ./services/php74
       dockerfile: Dockerfile
     image: dominikstyp/php74
+    depends_on:
+      - mongodb
     volumes:
       - ./tests:/app/tests:cached
       - ./vendor:/tmp/vendor_mapped:cached
@@ -23,6 +25,8 @@ services:
 
   mongo-express:
     image: mongo-express
+    depends_on:
+      - mongodb
     #rerestart: always
     ports:
       - 8081:8081
