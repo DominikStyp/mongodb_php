@@ -1,37 +1,24 @@
 version: '3.7'
 
 services:
-  php74:
-    build:
-      context: ./services/php74
-      dockerfile: Dockerfile
-    image: dominikstyp/php74
-    depends_on:
-      - mongodb
-    volumes:
-      - ./tests:/app/tests:cached
-      - ./vendor:/tmp/vendor_mapped:cached
 
   mongodb:
-    build:
-      context: ./services/mongodb
-      dockerfile: Dockerfile
-    image: dominikstyp/mongodb
-    restart: always
+    build: ./services/mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+      - MONGO_INITDB_DATABASE=myFirstDB
+    #restart: always
+    ports: ['27017:27017']
 
   mongo-express:
     image: mongo-express
     depends_on:
       - mongodb
-    #rerestart: always
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=example
       # this must correspond to the name of the Mongo DB service name
-      ME_CONFIG_MONGODB_SERVER: mongodb
+      - ME_CONFIG_MONGODB_SERVER=mongodb
